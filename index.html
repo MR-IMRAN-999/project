@@ -11,6 +11,21 @@
             padding: 0;
             background-color: #f4f4f4;
         }
+        .header {
+            text-align: center;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .header h1 {
+            margin: 0;
+            padding-left: 10px; /* Space between logo and title */
+        }
+        .header img {
+            height: 50px; /* Adjust logo size */
+            width: auto;
+        }
         .container {
             display: flex;
             flex-wrap: wrap;
@@ -38,7 +53,10 @@
 </head>
 <body>
 
-    <h1 style="text-align: center; padding: 20px;">Photo Gallery</h1>
+    <div class="header">
+        <img src="vecteezy_golden-logo-eagle_27739545.png" alt="Logo"> <!-- Replace logo.png with your logo file -->
+        <h1>Photo Gallery</h1>
+    </div>
 
     <div class="container">
         <div class="gallery-item"><img src="Image/1744196121756.jpg" alt="Image 1"></div>
@@ -64,4 +82,4 @@
     </div>
 
 </body>
-</html>
+                                      </html>
