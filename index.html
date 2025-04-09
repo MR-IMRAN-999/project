@@ -3,86 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Image Gallery</title>
+    <title>Photo Gallery</title>
     <style>
-        /* Add your custom styles here */
-        .bwg-item {
-            margin: 10px;
-            display: inline-block;
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
         }
-        .bwg-masonry-thumb {
-            max-width: 100%;
-            height: auto;
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 20px;
+        }
+        .gallery-item {
+            width: 250px;
+            height: 250px;
+            margin: 10px;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .gallery-item:hover {
+            transform: scale(1.05);
+            transition: transform 0.3s ease-in-out;
         }
     </style>
 </head>
 <body>
-    <div class="bwg-item">
-        <a class="bwg-a bwg_lightbox" 
-           data-image-id="1" 
-           href="image/1744196121756.jpg" 
-           data-elementor-open-lightbox="no">
-            <div class="bwg-item0">
-                <div class="bwg-item1">
-                    <img decoding="async"
-                         class="skip-lazy bwg-masonry-thumb bwg_masonry_thumb_0 bwg_lazyload lazy_loader"
-                         data-id="1"
-                         data-src="image/1744196121756.jpg"
-                         data-width="500"
-                         data-height="311"
-                         alt="Image Description"
-                         title="Image Title" />
-                    <div class=""></div>
-                </div>
-            </div>
-        </a>
+
+    <h1 style="text-align: center; padding: 20px;">Photo Gallery</h1>
+
+    <div class="container">
+        <div class="gallery-item"><img src="image1.jpg" alt="Image 1"></div>
+        <div class="gallery-item"><img src="image2.jpg" alt="Image 2"></div>
+        <div class="gallery-item"><img src="image3.jpg" alt="Image 3"></div>
+        <div class="gallery-item"><img src="image4.jpg" alt="Image 4"></div>
+        <div class="gallery-item"><img src="image5.jpg" alt="Image 5"></div>
+        <div class="gallery-item"><img src="image6.jpg" alt="Image 6"></div>
+        <div class="gallery-item"><img src="image7.jpg" alt="Image 7"></div>
+        <div class="gallery-item"><img src="image8.jpg" alt="Image 8"></div>
+        <div class="gallery-item"><img src="image9.jpg" alt="Image 9"></div>
+        <div class="gallery-item"><img src="image10.jpg" alt="Image 10"></div>
+        <div class="gallery-item"><img src="image11.jpg" alt="Image 11"></div>
+        <div class="gallery-item"><img src="image12.jpg" alt="Image 12"></div>
+        <div class="gallery-item"><img src="image13.jpg" alt="Image 13"></div>
+        <div class="gallery-item"><img src="image14.jpg" alt="Image 14"></div>
+        <div class="gallery-item"><img src="image15.jpg" alt="Image 15"></div>
+        <div class="gallery-item"><img src="image16.jpg" alt="Image 16"></div>
+        <div class="gallery-item"><img src="image17.jpg" alt="Image 17"></div>
+        <div class="gallery-item"><img src="image18.jpg" alt="Image 18"></div>
+        <div class="gallery-item"><img src="image19.jpg" alt="Image 19"></div>
+        <div class="gallery-item"><img src="image20.jpg" alt="Image 20"></div>
     </div>
 
-    <div class="bwg-item">
-        <a class="bwg-a bwg_lightbox" 
-           data-image-id="2" 
-           href="image/img2.jpg" 
-           data-elementor-open-lightbox="no">
-            <div class="bwg-item0">
-                <div class="bwg-item1">
-                    <img decoding="async"
-                         class="skip-lazy bwg-masonry-thumb bwg_masonry_thumb_0 bwg_lazyload lazy_loader"
-                         data-id="2"
-                         data-src="image/img2.jpg"
-                         data-width="500"
-                         data-height="311"
-                         alt="Another Image"
-                         title="Second Image" />
-                    <div class=""></div>
-                </div>
-            </div>
-        </a>
-    </div>
-
-    <!-- Add more bwg-item divs as needed -->
-    
-    <script>
-        // Optional: Add lazy loading functionality
-        document.addEventListener("DOMContentLoaded", function() {
-            const lazyImages = [].slice.call(document.querySelectorAll("img.lazy_loader"));
-            
-            if ("IntersectionObserver" in window) {
-                let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
-                    entries.forEach(function(entry) {
-                        if (entry.isIntersecting) {
-                            let lazyImage = entry.target;
-                            lazyImage.src = lazyImage.dataset.src;
-                            lazyImage.classList.remove("lazy_loader");
-                            lazyImageObserver.unobserve(lazyImage);
-                        }
-                    });
-                });
-
-                lazyImages.forEach(function(lazyImage) {
-                    lazyImageObserver.observe(lazyImage);
-                });
-            }
-        });
-    </script>
 </body>
 </html>
